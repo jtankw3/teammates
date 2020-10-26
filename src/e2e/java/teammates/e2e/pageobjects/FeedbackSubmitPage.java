@@ -684,8 +684,11 @@ public class FeedbackSubmitPage extends AppPage {
     }
 
     private void reloadPageIfStuckLoading() {
+        By loadingContainer = By.className("loading-container");
         try {
-            getSubmitButton();
+            if (isElementPresent(loadingContainer)) {
+                waitForElementStaleness(browser.driver.findElement(loadingContainer));
+            }
         } catch (TimeoutException e) {
             reloadPage();
         }
