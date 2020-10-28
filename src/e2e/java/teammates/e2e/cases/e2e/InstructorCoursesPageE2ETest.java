@@ -114,7 +114,7 @@ public class InstructorCoursesPageE2ETest extends BaseE2ETestCase {
         coursesPage.verifyStatusMessage("The course " + newCourse.getId() + " has been restored.");
         coursesPage.verifyNumDeletedCourses(1);
         // No need to call sortByCreationDate() here because it is the default sort in DESC order
-        coursesPage.verifyActiveCoursesDetails(activeCoursesWithNewCourseSortedByCreationDate);
+        coursesPage.verifyActiveCoursesDetails(activeCoursesWithNewCourseSortedByCreationDate);s
         assertFalse(isCourseInRecycleBin(newCourse.getId()));
 
         ______TS("move archived course to recycle bin");
